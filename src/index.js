@@ -45,11 +45,11 @@ function getForecast(city) {
 
 function displayForecast() {
   let forecastHtml = "";
-
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day) {
+    days.forEach(function (day) {
+      forecastHtml =
+        forecastHtml +
+        `
       <div class="weather-forecast-day">
         <div class="weather-forecast-date"Tue</div>
         <div class="weather-forecast-icon">🌤️</div>
@@ -61,6 +61,7 @@ function displayForecast() {
         </div>
       </div>
     `;
+    });
   });
 
   let forecastElement = document.querySelector("#forecast");
